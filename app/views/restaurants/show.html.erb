@@ -1,0 +1,33 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <div class="row">
+    <h2>Information</h2>
+    <ul>
+        <li>Name: <%= @restaurant.name %> </li>
+        <li>Address: <%= @restaurant.address %> </li>
+        <li>Category: <%= @restaurant.category %> </li>
+        <li>Phone number: <%= @restaurant.phone_number %> </li>
+        <br>
+    </ul>
+    </div>
+    <div class="row">
+    <h2>Reviews</h2>
+      <ul>
+        <% @restaurant.reviews.each do |review| %>
+          <li>Review content: <%= review.content %></li>
+          <li>Rating: <%= review.rating %></li>
+          <br>
+        <% end %>
+      </ul>
+
+      <%= form_for [@restaurant, @review] do |f| %>
+        <%= f.label :content %>
+        <%= f.text_field  :content %>
+        <%= f.label :rating %>
+        <%= f.select(:rating, options_for_select([0,1,2,3,4,5])) %>
+      <%= f.submit "New reviewizzle"%>
+    <% end %>
+    <p><%= link_to "Show all", restaurants_path %></p>
+    <p><%= link_to "Add review", new_restaurant_review_path(@restaurant) %></p>
+  </div>
+</div>
