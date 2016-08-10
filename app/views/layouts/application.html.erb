@@ -11,15 +11,27 @@
   </head>
 
   <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href='<% link_to restaurants_path %>'>Restaurants
-          <!-- <img alt="Brand" src="https://unsplash.it/200" class="avatar-large"> -->
-        </a>
-      </div>
-    </div>
-  </nav>
+  <div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    Restaurants
+  <% end %>
+
+  <!-- Right Navigation -->
+
+    <!-- Search form -->
+
+    <!-- Notification -->
+
+    <!-- Profile picture and dropdown -->
+
+    <!-- Button (call-to-action) -->
+    <%= link_to t(".top_call_to_action", default: "Add restaurant"), new_restaurant_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+  </div>
+
+  <!-- Dropdown list appearing on mobile only -->
+
+</div>
     <%= yield %>
   </body>
 </html>

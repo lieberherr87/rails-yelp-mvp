@@ -1,7 +1,7 @@
   <%= form_for [@restaurant, @review] do |f| %>
     <%= f.label :content %>
-    <%= f.text_field  :content %>
+    <%= f.text_area  :content, class:"form-control"%>
     <%= f.label :rating %>
-    <%= f.select(:rating, options_for_select([0,1,2,3,4,5])) %>
-    <%= f.submit "New reviewizzle"%>
+    <%= f.select :rating, [0,1,2,3,4,5], {}, {class:"form-control"} %>
+    <%= f.submit "New reviewizzle", class:"form-control btn btn-primary" %>
   <% end %>

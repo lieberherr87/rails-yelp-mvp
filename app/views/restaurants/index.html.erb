@@ -1,6 +1,5 @@
 <div class="container">
   <h1>Restaurants</h1>
-  <h2><%= link_to "Add new restaurant", new_restaurant_path %></h2>
   <br>
     <div class="row">
       <table class="table table-hover">
@@ -20,8 +19,8 @@
             <td><%= restaurant.address %></td>
             <td><%= restaurant.category %></td>
             <td><%= restaurant.phone_number %></td>
-            <td><%= link_to "Details", restaurant_path(restaurant) %>
-              <%= link_to "Add review", new_restaurant_review_path(restaurant) %></td>
+            <td><%= link_to "Details", restaurant_path(restaurant), class:"btn btn-primary" %>
+              <%= link_to "Add review", new_restaurant_review_path(restaurant), class:"btn btn-info" %></td>
             <% end %>
           </tr>
         </tbody>
